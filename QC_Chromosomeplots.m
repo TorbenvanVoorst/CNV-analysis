@@ -1,4 +1,4 @@
-BEFORE RUNNING:
+%% BEFORE RUNNING:
 % Put in the minimal confidence level required to plot CNVs
 ConfidenceLevel = 25;
 
@@ -12,7 +12,7 @@ minimalLength = 50000;
 % Do you want to save the pictures (Y/N)?
 SavePics = 'Y';
 
-FROM HERE ON YOU DON'T NEED TO CHANGE ANYTHING
+%% FROM HERE ON YOU DON'T NEED TO CHANGE ANYTHING
 % Prompt the user to select a file
 [file, path] = uigetfile({'*.xlsx;*.xls;*.csv','Supported Files (*.xlsx, *.xls, *.csv)'},'Select the data file');
 
