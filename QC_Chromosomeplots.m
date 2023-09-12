@@ -135,10 +135,7 @@ for i = 1:numUniqueChrom
                 
                 % Hold on for subsequent lines
                 hold on;
-                
-                % Create a separate invisible plot for data points to include in the legend
-                dataPointPlot = plot(NaN, NaN, 'o', 'MarkerSize', 4, 'MarkerFaceColor', 'red', 'HandleVisibility', 'off');
-                
+                              
                 % Plot makers for start, stop and CNvalue
                 text((startValue + endValue) / 2, row + 0.1, num2str(CNValue), 'HorizontalAlignment', 'center', 'VerticalAlignment', 'bottom', 'Color', 'black', 'FontSize', 8);
                 plot(startValue, row, 'o', 'MarkerSize', 4, 'MarkerFaceColor', 'red', 'HandleVisibility', 'off');
