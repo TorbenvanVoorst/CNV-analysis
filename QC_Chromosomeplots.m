@@ -1,5 +1,4 @@
-%% BEFORE RUNNING:
-
+BEFORE RUNNING:
 % Put in the minimal confidence level required to plot CNVs
 ConfidenceLevel = 25;
 
@@ -13,8 +12,7 @@ minimalLength = 50000;
 % Do you want to save the pictures (Y/N)?
 SavePics = 'Y';
 
-%% FROM HERE ON YOU DON'T NEED TO CHANGE ANYTHING
-
+FROM HERE ON YOU DON'T NEED TO CHANGE ANYTHING
 % Prompt the user to select a file
 [file, path] = uigetfile({'*.xlsx;*.xls;*.csv','Supported Files (*.xlsx, *.xls, *.csv)'},'Select the data file');
 
@@ -135,11 +133,11 @@ for i = 1:numUniqueChrom
                 
                 % Hold on for subsequent lines
                 hold on;
-                              
+
                 % Plot makers for start, stop and CNvalue
                 text((startValue + endValue) / 2, row + 0.1, num2str(CNValue), 'HorizontalAlignment', 'center', 'VerticalAlignment', 'bottom', 'Color', 'black', 'FontSize', 8);
-                plot(startValue, row, 'o', 'MarkerSize', 4, 'MarkerFaceColor', 'red', 'HandleVisibility', 'off');
-                plot(endValue, row, 'o', 'MarkerSize', 4, 'MarkerFaceColor', 'red', 'HandleVisibility', 'off');
+                plot(startValue, row, 'o', 'MarkerSize', 4, 'MarkerFaceColor', [color], 'MarkerEdgeColor', [color] , 'HandleVisibility', 'off');
+                plot(endValue, row, 'o', 'MarkerSize', 4, 'MarkerFaceColor', [color], 'MarkerEdgeColor', [color] , 'HandleVisibility', 'off');
             end
         end
     end
