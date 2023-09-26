@@ -4,7 +4,7 @@ A quick matlab file to make plots of CNVs detected by the FGA Quality Control pi
 
 This script works on excel tables and CSVs.
 
-Your table or CSV needs to contain the following columns:
+Your table or CSV needs to contain the following columns (with headers that contain these exact names):
 Coordinates, Length, CN, Sample, Confidence
 
 To use the script, collect the QC data from your samples and/or controls you want to compare, and put them in a single table or CSV. The script will ask you to open this file for analysis when you run it.
