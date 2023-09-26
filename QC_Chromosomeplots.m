@@ -46,6 +46,9 @@ else
     error('Unsupported file format. Please select an Excel (XLSX/XLS) or CSV file.');
 end
 
+% Sort the table based on 'Sample' and then 'Location'
+tableVarName = sortrows(tableVarName, {'Sample', 'Coordinates'});
+
 % Prompt the user for the save directory
 if strcmpi(SavePics, 'Y')
     saveDir = uigetdir('', 'Select a directory to save the figures');
