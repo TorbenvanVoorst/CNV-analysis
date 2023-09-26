@@ -1,5 +1,5 @@
 %% BEFORE RUNNING:
-% Put in the minimal confidence level required to plot CNVs
+% Put in the minimal confidence level required to plot CNVs. CNVs below this level will be plotted as a dashed line.
 ConfidenceLevel = 25;
 
 % Put in the minimal length of CNV.
