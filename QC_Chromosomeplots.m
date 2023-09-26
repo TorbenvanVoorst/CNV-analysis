@@ -119,16 +119,29 @@ for i = 1:numUniqueChrom
         colorIndex = find(uniqueSamples == sampleValue);
         if ~isempty(colorIndex)
             color = colorMap(colorIndex, :);
-            
             % Check 'Confidence' and 'Length' conditions
-            if ConfidenceValue >= ConfidenceLevel
-                if LengthValue >= minimalLength
-                    % Plot the line with full opacity and set 'DisplayName' for legend
-                    plot([startValue, endValue], [row, row], '-', 'Color', [color, 1], 'LineWidth', 2, 'DisplayName', char(sampleValue)); % Adjust line properties as needed
-                else
-                    % Plot the line with 50% opacity and set 'DisplayName' for legend
-                    plot([startValue, endValue], [row, row], '--', 'Color', [color, 0.5], 'LineWidth', 2, 'DisplayName', char(sampleValue)); % 50% opacity
-                end
+if ConfidenceValue >= ConfidenceLevel
+    if LengthValue >= minimalLength
+        % Plot the line with full opacity ('-') and set 'DisplayName' for legend
+        plot([startValue, endValue], [row, row], '-', 'Color', [color, 1], 'LineWidth', 2, 'DisplayName', char(sampleValue));
+    else
+        % Plot the line as a dashed line ('--') with full opacity and set 'DisplayName' for legend
+        plot([startValue, endValue], [row, row], '--', 'Color', [color, 1], 'LineWidth', 2, 'DisplayName', char(sampleValue));
+    end
+    % Hold on for subsequent lines
+                hold on;
+                % Plot makers for start, stop and CNvalue
+                text((startValue + endValue) / 2, row + 0.1, num2str(CNValue), 'HorizontalAlignment', 'center', 'VerticalAlignment', 'bottom', 'Color', 'black', 'FontSize', 8);
+                plot(startValue, row, 'o', 'MarkerSize', 4, 'MarkerFaceColor', [color], 'MarkerEdgeColor', [color] , 'HandleVisibility', 'off');
+                plot(endValue, row, 'o', 'MarkerSize', 4, 'MarkerFaceColor', [color], 'MarkerEdgeColor', [color] , 'HandleVisibility', 'off');
+else
+    if LengthValue >= minimalLength
+        % Plot the line with full opacity ('-') at 20% opacity and set 'DisplayName' for legend
+        plot([startValue, endValue], [row, row], '-', 'Color', [color, 0.2], 'LineWidth', 2, 'DisplayName', char(sampleValue));
+    else
+        % Plot the line as a dashed line ('--') at 20% opacity and set 'DisplayName' for legend
+        plot([startValue, endValue], [row, row], '--', 'Color', [color, 0.2], 'LineWidth', 2, 'DisplayName', char(sampleValue));
+    end
                 
                 % Hold on for subsequent lines
                 hold on;
