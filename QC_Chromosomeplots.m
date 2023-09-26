@@ -1,9 +1,9 @@
 %% BEFORE RUNNING:
-% Put in the minimal confidence level required to plot CNVs. CNVs below this level will be plotted as a dashed line.
+% Put in the minimal confidence level required to plot CNVs. CNVs below this level will be plotted as a opaque line.
 ConfidenceLevel = 25;
 
 % Put in the minimal length of CNV.
-% CNVs with a length below minimalLength will be plotted as an opaque line.
+% CNVs with a length below minimalLength will be plotted as an dashed line.
 % They will still be plotted because sometimes multiple smaller CNVs next
 % to each other actually belong to one larger CNV.
 minimalLength = 50000;
